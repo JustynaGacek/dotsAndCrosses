@@ -7,7 +7,13 @@ class TestGame(TestCase):
         self.fail()
 
     def test_check_if_given_field_correct(self):
-        self.fail()
+        game = Game.Game()
+        self.assertEqual(game.check_if_given_field_correct(4), True)
+        self.assertEqual(game.check_if_given_field_correct(9), False)
+        self.assertEqual(game.check_if_given_field_correct(-1), False)
+        self.assertRaises(ValueError, game.check_if_given_field_correct, self, 3.33)
+        self.assertRaises(ValueError, game.check_if_given_field_correct, self, "aaa")
+
 
     def test_first_user_move(self):
         self.fail()
