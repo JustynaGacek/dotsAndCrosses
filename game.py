@@ -54,7 +54,6 @@ class Game(object):
     def second_user_move(self):
         field = input("Second player's move. Choose a spot using numbers 0-8:   ")
         if self.check_if_given_field_correct(field):
-            field = int(field)
             self.board[field] = "X"
             self.winning_condition_increment(field, 1)
             return True
