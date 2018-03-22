@@ -4,3 +4,4 @@ The game in Tic-Tac-Toe. The players make their move using the terminal comand l
 
 How to use? Compile with command: python Game.py
 
+Nextly, when you start this game, read communicates and follow this rules.
