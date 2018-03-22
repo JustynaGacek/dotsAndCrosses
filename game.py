@@ -52,15 +52,18 @@ class Game(object):
                 return False
         except ValueError:
             print("You can give only integer value.")
-
+            
     def second_user_move(self):
-        field = int(input("Second player's move. Choose a spot using numbers 0-8:   "))
-        if self.check_if_given_field_correct(field):
-            self.board[field] = "X"
-            self.winning_condition_increment(field, 1)
-            return True
-        else:
-            return False
+        try:
+            field = int(input("Second player's move. Choose a spot using numbers 0-8:   "))
+            if self.check_if_given_field_correct(field):
+                self.board[field] = "X"
+                self.winning_condition_increment(field, 1)
+                return True
+            else:
+                return False
+        except ValueError:
+            print("You can give only integer value.")
 
     def print_board(self):
         for field in range(9):
