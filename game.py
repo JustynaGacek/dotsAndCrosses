@@ -23,21 +23,27 @@ class Game(object):
             self.diagonals[1] += increment_value
 
     def check_if_given_field_correct(self, field):
-        if field != '' and 0 <= field <= 8:
-            if self.board[field] == ' ':
-                print("Your choice was saved.")
-                return True
+        if isinstance(field, int):
+            if field != '' and 0 <= field <= 8:
+                if self.board[field] == ' ':
+                    print("Your choice was saved.")
+                    return True
+                else:
+                    print("This field is already occupied. Please choose another free value.")
+                    return False
             else:
-                print("This field is already occupied. Please choose another free value.")
+                print("Bad number, use a number from range 0-8 to make a move. For reference:")
+                Game.mock_board()
                 return False
         else:
-            print("Bad number, use a number from range 0-8 to make a move. For reference:")
+            print("Bad value, you have to use integer. Use a number from range 0-8 to make a move. For reference:")
             Game.mock_board()
             return False
 
     def first_user_move(self):
-        field = int(input("First player's move. Choose a spot using numbers 0-8:   "))
+        field = input("First player's move. Choose a spot using numbers 0-8:   ")
         if self.check_if_given_field_correct(field):
+            field = int(field)
             self.board[field] = "O"
             self.winning_condition_increment(field, -1)
             return True
