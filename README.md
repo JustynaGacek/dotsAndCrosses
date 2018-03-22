@@ -1,7 +1,6 @@
 # dotsAndCrosses
 
-The game in Tic-Tac-Toe. The players make their move using the terminal comand line. Each field of the board has consecutive number from 0 to 8 and the player choose field using one of then. In this game there are clear messages, for example when user give bad input. If player make mistake, then he has next chance, until good choise. 
+The game of Tic-Tac-Toe. The players make their moves using comand line. Each field of the board has consecutive number from 0 to 8 and the players choose field using one of them. Game checks user inputs and gives hints upon finding a wrong one. 
 
-How to use? Compile with command: python Game.py
+Just run the file and follow the commands on the screen to play! Have fun!
 
-Nextly, when you start this game, read communicates and follow this rules.
