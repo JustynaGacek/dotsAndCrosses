@@ -23,7 +23,7 @@ class Game(object):
             self.diagonals[1] += increment_value
 
     def check_if_given_field_correct(self, field):
-        if 0 <= field <= 8:
+        if field != '' and 0 <= field <= 8:
             if self.board[field] == ' ':
                 print("Your choice was saved.")
                 return True
@@ -31,7 +31,8 @@ class Game(object):
                 print("This field is already occupied. Please choose another free value.")
                 return False
         else:
-            print("Bad number, use a number from range 0-8 to make a move.")
+            print("Bad number, use a number from range 0-8 to make a move. For reference:")
+            Game.mock_board()
             return False
 
     def first_user_move(self):
@@ -103,6 +104,7 @@ class Game(object):
                     counter += 1
         if not self.winning_flag:
             print("It's a draw!")
+        print("Thanks for playing!")
 
 
 new_game = Game()
