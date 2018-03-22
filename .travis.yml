@@ -1,0 +1,12 @@
+language: python
+python:
+  - "3.6"
+cache: pip
+install:
+  - pip install -r requirements.txt
+script:
+  - python test_game.py
+
+notifications:
+  email:
+    - justynagacek6@gmail.com
