@@ -15,6 +15,7 @@ class Game(object):
             self.board.append(' ')
 
     def winning_condition_increment(self, field, increment_value):
+        """method used to assert how close players are to winning"""
         self.rows[math.floor(field / 3)] += increment_value
         self.columns[field % 3] += increment_value
         if field in {0, 4, 8}:
@@ -87,6 +88,7 @@ class Game(object):
         print("\n-----------")
 
     def winning_condition_check(self):
+        """method that checks winning conditions for both players"""
         if -3 in self.rows or -3 in self.columns or -3 in self.diagonals :
             print("Player one(O) won!")
             self.winning_flag = 1
