@@ -26,7 +26,7 @@ class Game(object):
     def check_if_given_field_correct(self, field):
         if isinstance(field, int):
             int(field)
-            if field != '' and 0 <= field <= 8:
+            if 0 <= field <= 8:
                 if self.board[field] == ' ':
                     print("Your choice was saved.")
                     return True
@@ -121,5 +121,4 @@ class Game(object):
         print("Thanks for playing!")
 
 
-new_game = Game()
-new_game.game()
+
